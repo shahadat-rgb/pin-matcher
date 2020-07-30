@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pin Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="pin-generator half-width">
+                    <input id="input-number" class="form-control text-center" type="text">
+                    <button id="random-genarator" class="generate-btn">Generate Pin</button>
+                </div>
+            </div> 
+            <div class="col-md-6">
+                <div class="input-section half-width">
+              <form action="" name="calculate">
+                    <input class="form-control text-center" type="text" name="display"  placeholder="0">
+                    <div class="numbers">
+                        <div class="calc-body">
+                            <div class="calc-button-row">
+                              <div  onclick="calculate.display.value +='7'" class="button">7</div>
+                              <div  onclick="calculate.display.value +='8'" class="button">8</div>
+                              <div  onclick="calculate.display.value +='9'" class="button">9</div>
+                            </div>
+                            <div class="calc-button-row">
+                              <div  onclick="calculate.display.value +='4'" class="button">4</div>
+                              <div  onclick="calculate.display.value +='5'" class="button">5</div>
+                              <div  onclick="calculate.display.value +='6'" class="button">6</div>
+                            </div>
+                            <div class="calc-button-row">
+                              <div  onclick="calculate.display.value +='1'" class="button">1</div>
+                              <div  onclick="calculate.display.value +='2'"class="button">2</div>
+                              <div  onclick="calculate.display.value +='3'" class="button">3</div>
+                            </div>
+                            <div class="calc-button-row">
+                                <div onclick="calculate.display.value=calculate.display.value.slice(0, -1)" class="button">></div>
+                                <div  onclick="calculate.display.value +='0'" class="button">0</div>
+                                <div  onclick="calculate.display.value= null" class="button">C</div>
+                            </div>
+                            <div>
+                                <button id="submit" type="submit" class="submit-btn">Submit</button>
+                                <p class="action-left">3 try left</p>
+                            </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+        <div class="notify-section">
+            <p id="crose" class="notify">❌ Pin Didn't Match, Please try again</p>
+            <p id="correct" class="notify">✅ Pin Matched... Secret door is opening for you</p>
+        </div>
+    </div>
+    <script>
+       const randomGenarator = document.getElementById("random-genarator");
+             randomGenarator.addEventListener('click',function () {
+       const fourDigitNumber= Math.floor(1000 + Math.random()*9000);
+           document.getElementById("input-number").value=fourDigitNumber;
+         })
+            // //  submit aria
+                    
+            // const submitAria= document.getElementById("submit"); 
+            //       submitAria.addEventListener('click',function(){
+
+
+            //  if (input-number.value == calculate.display.value) {
+            //        var result= document.getElementById('correct');
+            //        result.style.display="block";
+            //  }
+            //   else{
+            //         var result= document.getElementById('crose');
+            //            result.style.display="block";
+            //   }         
+            //       })
+    </script> 
+         
+
+</body>
+</html>
