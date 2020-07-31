@@ -13,7 +13,7 @@
             <div class="col-md-6">
                 <div class="pin-generator half-width">
                     <input id="input" class="form-control text-center" type="text" placeholder="----">
-                    <button id="random-genarator" class="generate-btn">Generate Pin</button>
+                    <button id="random-generator" class="generate-btn">Generate Pin</button>
                 </div>
             </div> 
             <div class="col-md-6">
@@ -43,7 +43,7 @@
                             </div>
                             <div>
                     
-                                <button id="submit" type="submit" class="submit-btn">Submit</button>
+                                <button id="submit-btn" type="submit" class="submit-btn">Submit</button>
                                 <p class="action-left"><span id="try-left">3</span>try left</p>
                                 
                             </div>
@@ -57,16 +57,17 @@
         </div>
     </div>
     <script>
+                        //   pin generator
 
-        var randomGenarator = document.getElementById("random-genarator");
-             randomGenarator.addEventListener('click',function () {
+        var randomGenerator = document.getElementById("random-generator");
+             randomGenerator.addEventListener('click',function () {
         var fourDigitNumber= Math.floor(1000 + Math.random()*9000);
            document.getElementById("input").value=fourDigitNumber;
          })
-            // //  submit aria          
+                        //  submit---- btn       
 
-             var submitAria= document.getElementById("submit"); 
-                  submitAria.addEventListener('click',function(){
+             var submitBtn= document.getElementById("submit-btn"); 
+                  submitBtn.addEventListener('click',function(){
 
                var pinInput= document.getElementById("input").value;
                var displayInput=document.getElementById("display").value;
@@ -77,14 +78,15 @@
                 var notify= document.getElementById('cross-symbol');
                     notify.style.display="none";
              }
+                
              else{
                 var notify= document.getElementById('cross-symbol');
                          notify.style.display="block"; 
                 var notify= document.getElementById('correct-symbol');
                         notify.style.display="none";
-
+                    
              }
-             }) 
+           }) 
                 
    </script>
 
